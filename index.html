@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rivera Landscaping | Landscaping in Austin, TX</title>
-  <meta
-    name="description"
-    content="Rivera Landscaping provides professional lawn care, landscaping, trimming, cleanups, and outdoor services in Austin, TX. Get your free estimate today."
-  />
+  <title>Lone Star Landscaping | Texas Landscaping Experts</title>
+  <meta name="description" content="Lone Star Landscaping transforms Texas yards into beautiful outdoor spaces. Lawn maintenance, custom landscaping, and irrigation systems. Get your free estimate today.">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,17 +14,18 @@
       theme: {
         extend: {
           colors: {
-            forest: "#163A24",
-            green: "#2F7D32",
-            lime: "#7CB342",
-            cream: "#F7F5EF",
+            forest: "#123524",
+            green: "#1F6B3A",
+            brightGreen: "#39A852",
+            gold: "#D89B2B",
+            cream: "#F7F7F2"
           },
           boxShadow: {
-            soft: "0 10px 40px rgba(0,0,0,.08)",
+            luxury: "0 20px 60px rgba(0,0,0,0.12)"
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
@@ -36,28 +34,42 @@
     }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
     }
 
-    .hero-bg {
+    .hero {
       background:
         linear-gradient(
           90deg,
-          rgba(10, 30, 18, 0.88) 0%,
-          rgba(10, 30, 18, 0.70) 48%,
-          rgba(10, 30, 18, 0.35) 100%
+          rgba(4, 18, 11, 0.86) 0%,
+          rgba(4, 18, 11, 0.68) 50%,
+          rgba(4, 18, 11, 0.42) 100%
         ),
-        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2000&q=85")
-        center / cover no-repeat;
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2200&q=90")
+        center center / cover no-repeat;
+    }
+
+    .hero-content {
+      animation: heroEnter 1s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    @keyframes heroEnter {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(25px);
       transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity 0.7s ease,
+        transform 0.7s ease;
     }
 
     .reveal.visible {
@@ -67,51 +79,83 @@
 
     .service-card {
       transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.10);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    .cta-button {
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:active {
+      transform: scale(0.97);
+    }
+
+    .service-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(-3deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 antialiased">
 
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="h-16 md:h-20 flex items-center justify-between">
+  <!-- Header -->
+  <header class="absolute top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="h-20 flex items-center justify-between">
 
-        <a href="#home" class="flex items-center gap-2">
-          <div class="w-10 h-10 rounded-full bg-green flex items-center justify-center">
-            <span class="text-white text-xl">🌿</span>
+        <a href="#" class="flex items-center gap-3 text-white">
+          <div class="w-11 h-11 rounded-full bg-gold flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V9m0 0C9 9 6 7 6 4c3 0 6 2 6 5Zm0 4c3 0 6-2 6-5-3 0-6 2-6 5Z"/>
+            </svg>
           </div>
 
           <div>
-            <div class="font-extrabold text-forest leading-none">
-              Rivera
+            <div class="font-black text-lg leading-none tracking-tight">
+              LONE STAR
             </div>
-            <div class="text-xs tracking-[0.2em] uppercase text-gray-500">
+            <div class="text-[10px] tracking-[0.3em] text-white/70 uppercase">
               Landscaping
             </div>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
-          <a href="#services" class="hover:text-green transition">Services</a>
-          <a href="#reviews" class="hover:text-green transition">Reviews</a>
-          <a href="#contact" class="hover:text-green transition">Contact</a>
-        </nav>
-
         <a
-          href="tel:+15125550123"
-          class="inline-flex items-center gap-2 bg-green hover:bg-forest text-white font-bold px-4 py-2.5 rounded-full transition shadow-sm"
+          href="#quote"
+          class="hidden sm:inline-flex bg-white text-forest font-bold px-5 py-2.5 rounded-full hover:bg-gold hover:text-white transition"
         >
-          <span>📞</span>
-          <span>Call Now</span>
+          Free Estimate
         </a>
 
       </div>
@@ -119,461 +163,438 @@
   </header>
 
 
-  <!-- HERO -->
-  <main id="home">
+  <!-- Hero -->
+  <section class="hero min-h-[760px] md:min-h-[820px] flex items-center">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-24 pb-20">
 
-    <section class="hero-bg min-h-[720px] md:min-h-[780px] flex items-center pt-16">
-      <div class="max-w-7xl mx-auto px-5 w-full py-20">
+      <div class="hero-content max-w-3xl text-white">
 
-        <div class="max-w-2xl text-white reveal">
-
-          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span class="w-2 h-2 bg-lime rounded-full"></span>
-            <span class="text-sm font-semibold">
-              Proudly Serving Austin, TX
-            </span>
-          </div>
-
-          <h1 class="text-5xl md:text-7xl font-black leading-[0.95] tracking-tight">
-            Your Yard.
-            <span class="text-lime">Beautifully Done.</span>
-          </h1>
-
-          <p class="mt-6 text-lg md:text-xl text-white/85 max-w-xl leading-relaxed">
-            Professional landscaping and lawn care services that make
-            your outdoor space look its best — without the hassle.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-3 mt-9">
-
-            <a
-              href="#contact"
-              class="bg-lime hover:bg-white hover:text-forest text-white font-extrabold px-7 py-4 rounded-xl text-center transition shadow-lg"
-            >
-              Get a Free Estimate
-            </a>
-
-            <a
-              href="tel:+15125550123"
-              class="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-sm text-white font-bold px-7 py-4 rounded-xl text-center transition"
-            >
-              📞 Call (512) 555-0123
-            </a>
-
-          </div>
-
-          <div class="flex flex-wrap gap-x-6 gap-y-3 mt-8 text-sm text-white/80">
-            <span>✓ Free Estimates</span>
-            <span>✓ Reliable Service</span>
-            <span>✓ Local &amp; Trusted</span>
-          </div>
-
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-7">
+          <span class="w-2 h-2 rounded-full bg-gold"></span>
+          <span class="text-sm font-semibold tracking-wide">
+            Premium Landscaping • Texas
+          </span>
         </div>
-      </div>
-    </section>
 
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.98] tracking-tight">
+          Transform Your Texas Yard
+          <span class="text-gold">Into a Masterpiece.</span>
+        </h1>
 
-    <!-- TRUST BAR -->
-    <section class="bg-forest text-white">
-      <div class="max-w-7xl mx-auto px-5 py-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <p class="mt-7 max-w-2xl text-lg sm:text-xl text-white/85 leading-relaxed">
+          Professional landscaping solutions designed to create
+          beautiful, healthy, and unforgettable outdoor spaces.
+        </p>
 
-          <div>
-            <div class="text-2xl font-black">5★</div>
-            <div class="text-xs text-white/60 uppercase tracking-wider">
-              Rated Service
-            </div>
-          </div>
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
 
-          <div>
-            <div class="text-2xl font-black">100%</div>
-            <div class="text-xs text-white/60 uppercase tracking-wider">
-              Satisfaction Focus
-            </div>
-          </div>
+          <a
+            href="#quote"
+            class="cta-button inline-flex items-center justify-center gap-2 bg-gold hover:bg-[#e5aa32] text-white font-extrabold text-lg px-7 py-4 rounded-xl"
+          >
+            Get Free Estimate
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
 
-          <div>
-            <div class="text-2xl font-black">Local</div>
-            <div class="text-xs text-white/60 uppercase tracking-wider">
-              Austin Team
-            </div>
-          </div>
-
-          <div>
-            <div class="text-2xl font-black">FREE</div>
-            <div class="text-xs text-white/60 uppercase tracking-wider">
-              Estimates
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- SERVICES -->
-    <section id="services" class="py-20 md:py-28 bg-cream">
-      <div class="max-w-7xl mx-auto px-5">
-
-        <div class="max-w-2xl mx-auto text-center reveal">
-
-          <p class="text-green font-bold uppercase tracking-[0.2em] text-sm">
-            What We Do
-          </p>
-
-          <h2 class="mt-3 text-4xl md:text-5xl font-black text-forest">
-            Our Services
-          </h2>
-
-          <p class="mt-5 text-gray-600 text-lg">
-            From regular lawn maintenance to complete yard cleanups,
-            we've got your outdoor space covered.
-          </p>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center border border-white/40 bg-white/10 backdrop-blur-sm hover:bg-white hover:text-forest text-white font-bold text-lg px-7 py-4 rounded-xl transition"
+          >
+            Explore Our Services
+          </a>
 
         </div>
 
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-
-          <!-- SERVICE 1 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              🌱
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Lawn Care
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Keep your lawn healthy, clean, and looking its best with
-              dependable maintenance.
-            </p>
-          </div>
-
-
-          <!-- SERVICE 2 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              ✂️
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Trimming &amp; Pruning
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Professional trimming and pruning to keep trees, shrubs,
-              and plants neat and healthy.
-            </p>
-          </div>
-
-
-          <!-- SERVICE 3 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              🍂
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Yard Cleanups
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Remove leaves, branches, debris, and unwanted growth
-              to give your property a fresh look.
-            </p>
-          </div>
-
-
-          <!-- SERVICE 4 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              🌳
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Landscaping
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Enhance your outdoor space with thoughtful landscaping
-              and clean, professional finishes.
-            </p>
-          </div>
-
-
-          <!-- SERVICE 5 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              💧
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Outdoor Maintenance
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Routine outdoor maintenance designed to keep your
-              property looking great year-round.
-            </p>
-          </div>
-
-
-          <!-- SERVICE 6 -->
-          <div class="service-card bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="w-14 h-14 rounded-xl bg-green/10 flex items-center justify-center text-3xl">
-              🏡
-            </div>
-
-            <h3 class="mt-6 text-xl font-extrabold text-forest">
-              Property Refresh
-            </h3>
-
-            <p class="mt-3 text-gray-600 leading-relaxed">
-              Give your entire yard a fresh new appearance with
-              professional cleanup and landscaping services.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- WHY US -->
-    <section class="py-20 md:py-28 bg-white">
-      <div class="max-w-7xl mx-auto px-5">
-
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-          <div class="reveal">
-
-            <p class="text-green font-bold uppercase tracking-[0.2em] text-sm">
-              Why Rivera
-            </p>
-
-            <h2 class="mt-3 text-4xl md:text-5xl font-black text-forest">
-              A better-looking yard starts with the right team.
-            </h2>
-
-            <p class="mt-6 text-gray-600 text-lg leading-relaxed">
-              We believe landscaping should be simple. You tell us
-              what you want, and we'll take care of the hard work.
-            </p>
-
-            <div class="mt-8 space-y-5">
-
-              <div class="flex gap-4">
-                <div class="text-green text-xl">✓</div>
-                <div>
-                  <h3 class="font-bold text-forest">
-                    Reliable &amp; Professional
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">
-                    Dependable service with attention to detail.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="text-green text-xl">✓</div>
-                <div>
-                  <h3 class="font-bold text-forest">
-                    Straightforward Estimates
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">
-                    Know what you're getting before work begins.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="text-green text-xl">✓</div>
-                <div>
-                  <h3 class="font-bold text-forest">
-                    Local Service
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">
-                    Proudly serving homeowners throughout Austin.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="reveal">
-            <img
-              src="https://images.unsplash.com/photo-1599685315640-8e7d0f9a0b9d?auto=format&fit=crop&w=1200&q=85"
-              alt="Beautiful landscaped yard"
-              class="w-full h-[420px] object-cover rounded-3xl shadow-soft"
-            />
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="py-20 md:py-28 bg-cream">
-      <div class="max-w-7xl mx-auto px-5">
-
-        <div class="text-center reveal">
-
-          <p class="text-green font-bold uppercase tracking-[0.2em] text-sm">
-            Customer Reviews
-          </p>
-
-          <h2 class="mt-3 text-4xl md:text-5xl font-black text-forest">
-            What Our Customers Say
-          </h2>
-
-          <div class="mt-5 text-yellow-500 text-2xl tracking-wide">
-            ★★★★★
-          </div>
-
-        </div>
-
-
-        <div class="grid md:grid-cols-3 gap-5 mt-12">
-
-          <div class="bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="text-yellow-500 tracking-wide">
-              ★★★★★
-            </div>
-
-            <p class="mt-5 text-gray-700 leading-relaxed">
-              “Rivera Landscaping did an amazing job with our yard.
-              Everything looked clean and professionally finished.”
-            </p>
-
-            <div class="mt-6 font-bold text-forest">
-              — Sarah M.
-            </div>
-
-            <div class="text-sm text-gray-500">
-              Austin, TX
-            </div>
-          </div>
-
-
-          <div class="bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="text-yellow-500 tracking-wide">
-              ★★★★★
-            </div>
-
-            <p class="mt-5 text-gray-700 leading-relaxed">
-              “Great communication, showed up on time, and the yard
-              looks better than it has in years. Highly recommend.”
-            </p>
-
-            <div class="mt-6 font-bold text-forest">
-              — Michael R.
-            </div>
-
-            <div class="text-sm text-gray-500">
-              Austin, TX
-            </div>
-          </div>
-
-
-          <div class="bg-white rounded-2xl p-7 shadow-soft reveal">
-            <div class="text-yellow-500 tracking-wide">
-              ★★★★★
-            </div>
-
-            <p class="mt-5 text-gray-700 leading-relaxed">
-              “Very professional and easy to work with. The cleanup
-              completely transformed the look of our property.”
-            </p>
-
-            <div class="mt-6 font-bold text-forest">
-              — Jessica T.
-            </div>
-
-            <div class="text-sm text-gray-500">
-              Austin, TX
-            </div>
-          </div>
-
+        <div class="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/75">
+          <span>✓ Licensed &amp; Insured</span>
+          <span>✓ Local Texas Experts</span>
+          <span>✓ Satisfaction Guaranteed</span>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- CTA -->
-    <section id="contact" class="bg-forest py-20 md:py-28">
-      <div class="max-w-4xl mx-auto px-5 text-center text-white reveal">
+  <!-- Services -->
+  <section id="services" class="py-20 sm:py-24 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
 
-        <div class="text-5xl mb-6">
-          🌿
-        </div>
+      <div class="max-w-2xl mx-auto text-center reveal">
 
-        <h2 class="text-4xl md:text-6xl font-black tracking-tight">
-          Ready for a better-looking yard?
+        <span class="text-green font-bold uppercase tracking-[0.2em] text-sm">
+          What We Do
+        </span>
+
+        <h2 class="mt-3 text-4xl sm:text-5xl font-black text-forest tracking-tight">
+          Built for Beautiful Texas Yards
         </h2>
 
-        <p class="mt-6 text-lg md:text-xl text-white/75 max-w-2xl mx-auto">
-          Get in touch with Rivera Landscaping today for a
-          free estimate. No pressure. Just a better yard.
-        </p>
-
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-9">
-
-          <!-- PHONE -->
-          <a
-            href="tel:+15125550123"
-            class="bg-lime hover:bg-white hover:text-forest text-white font-extrabold px-8 py-4 rounded-xl transition shadow-lg"
-          >
-            📞 Call for a Free Estimate
-          </a>
-
-          <!-- WHATSAPP -->
-          <a
-            href="https://wa.me/15125550123?text=Hi%20Rivera%20Landscaping!%20I'd%20like%20to%20get%20a%20free%20estimate."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-white hover:bg-gray-100 text-forest font-extrabold px-8 py-4 rounded-xl transition shadow-lg"
-          >
-            💬 WhatsApp Us
-          </a>
-
-        </div>
-
-        <p class="mt-7 text-sm text-white/50">
-          Serving Austin, TX and surrounding areas
+        <p class="mt-5 text-gray-600 text-lg leading-relaxed">
+          From routine maintenance to complete outdoor transformations,
+          we bring expertise and attention to every project.
         </p>
 
       </div>
-    </section>
-
-  </main>
 
 
-  <!-- FOOTER -->
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mt-12">
+
+        <!-- Lawn Maintenance -->
+        <article class="service-card bg-white rounded-3xl p-8 shadow-luxury reveal">
+
+          <div class="service-icon w-16 h-16 rounded-2xl bg-green/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V10m0 0C8.5 10 6 7.8 6 4c3.5 0 6 2.2 6 6Zm0 2c3.5 0 6-2.2 6-6-3.5 0-6 2.2-6 6Z"/>
+              <path stroke-linecap="round" d="M5 21h14"/>
+            </svg>
+          </div>
+
+          <h3 class="mt-7 text-2xl font-extrabold text-forest">
+            Lawn Maintenance
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Keep your lawn looking clean, green, and healthy with
+            dependable mowing, edging, trimming, and ongoing maintenance.
+          </p>
+
+          <a href="#quote" class="inline-flex items-center gap-2 mt-6 text-green font-bold hover:text-gold transition">
+            Request a quote
+            <span>→</span>
+          </a>
+
+        </article>
+
+
+        <!-- Custom Landscaping -->
+        <article class="service-card bg-white rounded-3xl p-8 shadow-luxury reveal">
+
+          <div class="service-icon w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M6 20V9l6-5 6 5v11M9 20v-6h6v6"/>
+              <path stroke-linecap="round" d="M12 4V2"/>
+            </svg>
+          </div>
+
+          <h3 class="mt-7 text-2xl font-extrabold text-forest">
+            Custom Landscaping
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Turn your outdoor vision into reality with thoughtfully
+            designed landscapes built around your property and lifestyle.
+          </p>
+
+          <a href="#quote" class="inline-flex items-center gap-2 mt-6 text-green font-bold hover:text-gold transition">
+            Request a quote
+            <span>→</span>
+          </a>
+
+        </article>
+
+
+        <!-- Irrigation -->
+        <article class="service-card bg-white rounded-3xl p-8 shadow-luxury reveal">
+
+          <div class="service-icon w-16 h-16 rounded-2xl bg-green/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3s5 5.2 5 9a5 5 0 1 1-10 0c0-3.8 5-9 5-9Z"/>
+              <path stroke-linecap="round" d="M9.5 14.5c.3 1.3 1.2 2 2.5 2.2"/>
+            </svg>
+          </div>
+
+          <h3 class="mt-7 text-2xl font-extrabold text-forest">
+            Irrigation Systems
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Efficient irrigation solutions that help keep your landscape
+            healthy while making smarter use of every drop of water.
+          </p>
+
+          <a href="#quote" class="inline-flex items-center gap-2 mt-6 text-green font-bold hover:text-gold transition">
+            Request a quote
+            <span>→</span>
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Why Choose Us -->
+  <section class="py-20 sm:py-24 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+        <div class="reveal">
+
+          <span class="text-green font-bold uppercase tracking-[0.2em] text-sm">
+            Why Choose Us
+          </span>
+
+          <h2 class="mt-3 text-4xl sm:text-5xl font-black text-forest tracking-tight">
+            Quality landscaping.
+            <span class="text-green">Texas pride.</span>
+          </h2>
+
+          <p class="mt-6 text-gray-600 text-lg leading-relaxed">
+            Your property deserves more than ordinary lawn care.
+            We combine local knowledge, professional service, and
+            attention to detail to create outdoor spaces you can enjoy.
+          </p>
+
+          <div class="mt-9 space-y-7">
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green text-white flex items-center justify-center font-black">
+                ✓
+              </div>
+
+              <div>
+                <h3 class="font-extrabold text-lg text-forest">
+                  Licensed &amp; Insured
+                </h3>
+                <p class="mt-1 text-gray-600">
+                  Professional service with protection and peace of mind.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gold text-white flex items-center justify-center font-black">
+                ★
+              </div>
+
+              <div>
+                <h3 class="font-extrabold text-lg text-forest">
+                  Local Texas Experts
+                </h3>
+                <p class="mt-1 text-gray-600">
+                  We understand Texas landscapes, weather, and growing conditions.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green text-white flex items-center justify-center font-black">
+                100%
+              </div>
+
+              <div>
+                <h3 class="font-extrabold text-lg text-forest">
+                  100% Satisfaction
+                </h3>
+                <p class="mt-1 text-gray-600">
+                  We focus on delivering results you'll be proud to show off.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="relative reveal">
+
+          <div class="absolute -inset-4 bg-gold/10 rounded-[2rem] rotate-2"></div>
+
+          <img
+            src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1400&q=90"
+            alt="Beautiful professionally landscaped Texas-style yard"
+            class="relative w-full h-[480px] object-cover rounded-[2rem] shadow-luxury"
+            loading="lazy"
+          >
+
+          <div class="absolute -bottom-6 left-5 right-5 sm:left-8 sm:right-auto bg-white rounded-2xl shadow-xl p-5 sm:min-w-[250px]">
+            <div class="text-gold text-xl">★★★★★</div>
+            <p class="mt-1 font-extrabold text-forest">
+              Your yard. Our craft.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Quick Quote -->
+  <section id="quote" class="py-20 sm:py-24 lg:py-28 bg-forest">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div class="text-white reveal">
+
+          <span class="text-gold font-bold uppercase tracking-[0.2em] text-sm">
+            Let's Get Started
+          </span>
+
+          <h2 class="mt-3 text-4xl sm:text-5xl font-black tracking-tight">
+            Get Your Free Estimate
+          </h2>
+
+          <p class="mt-6 text-white/70 text-lg leading-relaxed">
+            Tell us a little about your project and we'll be in touch
+            to discuss your landscaping needs.
+          </p>
+
+          <div class="mt-8 space-y-4 text-white/80">
+
+            <div class="flex items-center gap-3">
+              <span class="text-gold">✓</span>
+              <span>No-obligation estimate</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="text-gold">✓</span>
+              <span>Professional local service</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="text-gold">✓</span>
+              <span>Personalized solutions</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <form
+          id="quoteForm"
+          class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl reveal"
+        >
+
+          <div class="space-y-5">
+
+            <div>
+              <label for="name" class="block text-sm font-bold text-forest mb-2">
+                Name
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Your name"
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition"
+              >
+            </div>
+
+
+            <div>
+              <label for="phone" class="block text-sm font-bold text-forest mb-2">
+                Phone
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                autocomplete="tel"
+                placeholder="(555) 123-4567"
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition"
+              >
+            </div>
+
+
+            <div>
+              <label for="message" class="block text-sm font-bold text-forest mb-2">
+                Tell Us About Your Project
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell us what you'd like to improve..."
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition resize-none"
+              ></textarea>
+            </div>
+
+
+            <button
+              type="submit"
+              class="cta-button w-full bg-gold hover:bg-[#e5aa32] text-white font-extrabold text-lg py-4 rounded-xl"
+            >
+              Request My Free Estimate
+            </button>
+
+            <p id="formMessage" class="hidden text-center text-sm font-semibold text-green">
+              Thanks! We'll be in touch soon.
+            </p>
+
+            <p class="text-center text-xs text-gray-400">
+              By submitting this form, you agree to be contacted about your landscaping request.
+            </p>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Final CTA -->
+  <section class="py-16 bg-gold">
+    <div class="max-w-4xl mx-auto px-5 text-center text-white reveal">
+
+      <h2 class="text-3xl sm:text-4xl font-black">
+        Your dream yard is closer than you think.
+      </h2>
+
+      <p class="mt-4 text-white/85 text-lg">
+        Let's turn your outdoor space into something extraordinary.
+      </p>
+
+      <a
+        href="#quote"
+        class="cta-button inline-flex items-center justify-center mt-7 bg-white text-forest hover:bg-forest hover:text-white font-extrabold px-7 py-4 rounded-xl"
+      >
+        Get Your Free Estimate
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
   <footer class="bg-black text-white">
-    <div class="max-w-7xl mx-auto px-5 py-8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-9">
 
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
 
         <div class="text-center md:text-left">
-          <div class="font-extrabold text-lg">
-            Rivera Landscaping
+          <div class="font-black text-lg">
+            LONE STAR LANDSCAPING
           </div>
 
-          <div class="text-sm text-white/50 mt-1">
-            Professional Landscaping • Austin, TX
-          </div>
+          <p class="text-sm text-white/45 mt-1">
+            Professional Landscaping • Proudly Serving Texas
+          </p>
         </div>
 
-        <div class="text-sm text-white/50">
-          © 2026 Rivera Landscaping. All rights reserved.
-        </div>
+        <p class="text-sm text-white/40">
+          © 2026 Lone Star Landscaping. All rights reserved.
+        </p>
 
       </div>
 
@@ -581,38 +602,25 @@
   </footer>
 
 
-  <!-- MOBILE STICKY CTA -->
-  <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 p-3">
+  <!-- Mobile Bottom CTA -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 p-3">
 
-    <div class="grid grid-cols-2 gap-2">
-
-      <a
-        href="tel:+15125550123"
-        class="bg-green text-white font-bold py-3 rounded-xl text-center"
-      >
-        📞 Call Now
-      </a>
-
-      <a
-        href="https://wa.me/15125550123?text=Hi%20Rivera%20Landscaping!%20I'd%20like%20to%20get%20a%20free%20estimate."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-lime text-white font-bold py-3 rounded-xl text-center"
-      >
-        💬 WhatsApp
-      </a>
-
-    </div>
+    <a
+      href="#quote"
+      class="flex items-center justify-center w-full bg-gold text-white font-extrabold py-3.5 rounded-xl shadow-lg"
+    >
+      Get Your Free Estimate →
+    </a>
 
   </div>
 
 
-  <!-- SCROLL REVEAL -->
   <script>
+    // Scroll reveal
     const revealElements = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
@@ -626,9 +634,26 @@
     );
 
     revealElements.forEach((element) => {
-      observer.observe(element);
+      revealObserver.observe(element);
+    });
+
+
+    // Demo form behavior
+    // Replace this with your preferred form backend before publishing.
+    const quoteForm = document.getElementById("quoteForm");
+    const formMessage = document.getElementById("formMessage");
+
+    quoteForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      formMessage.classList.remove("hidden");
+
+      quoteForm.reset();
+
+      setTimeout(() => {
+        formMessage.classList.add("hidden");
+      }, 5000);
     });
   </script>
 
-</body>
-  </html>
+</body></html>
